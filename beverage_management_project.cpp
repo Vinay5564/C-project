@@ -2,16 +2,16 @@
 #include <vector>
 #include <algorithm>
 
-// Define a struct to represent a beverage
+
 struct Beverage {
     std::string name;
     std::string type;
     float alcoholPercentage;
     float price;
-    std::string brand; // New field for brand
+    std::string brand; 
 };
 
-// Function to display a beverage
+
 void displayBeverage(const Beverage& beverage) {
     std::cout << "Name: " << beverage.name << "\n";
     std::cout << "Type: " << beverage.type << "\n";
@@ -21,7 +21,7 @@ void displayBeverage(const Beverage& beverage) {
     std::cout << "------------------------\n";
 }
 
-// Function to recommend beverages based on user preferences
+
 void recommendBeverages(const std::vector<Beverage>& beverages, float maxPrice, float minAlcoholPercentage) {
     std::cout << "\nRecommendations:\n";
     for (const auto& beverage : beverages) {
@@ -32,7 +32,7 @@ void recommendBeverages(const std::vector<Beverage>& beverages, float maxPrice, 
 }
 
 int main() {
-    // Sample beverages with categories, subcategories, brands, and prices
+   
    std::vector<Beverage> beverages = {
        //whiskey
         {"Jack Daniel's Old No. 7", "Whiskey", 40.0, 30.0, "Jack Daniel's"},
@@ -151,7 +151,7 @@ int main() {
 
     char repeat;
     do {
-        // Get user preferences
+       
         int subCategoryChoice;
         float maxPrice, minAlcoholPercentage;
 
@@ -190,7 +190,7 @@ int main() {
                 return 1;
         }
 
-        // Filter beverages based on user preferences
+      
         std::vector<Beverage> filteredBeverages;
         for (const auto& beverage : beverages) {
             if (beverage.type == preferredType && beverage.price <= maxPrice && beverage.alcoholPercentage >= minAlcoholPercentage) {
@@ -198,7 +198,7 @@ int main() {
             }
         }
 
-        // Recommend beverages based on user preferences
+      
         recommendBeverages(filteredBeverages, maxPrice, minAlcoholPercentage);
 
         std::cout << "Do you want another recommendation? (y/n): ";
